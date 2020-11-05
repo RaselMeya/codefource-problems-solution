@@ -50,7 +50,7 @@ ____________________________________*/
 #define EPS 1e-9
 #define PI 3.1415926535897932384626433832795
 #define MOD 1000000007
-#define maxx 100001
+#define  maxx 100000000
 using namespace std;
  
 ///...Mathematics...///
@@ -92,63 +92,36 @@ bool isprime(int w){if(w == 0) return false;if(w == 1) return false;int sqrtw = 
      }
      return -1;
 }
-const ll N = 1e5+ 7;
-bitset < N+1 > bs;
-vector < ll > primes ;
-void sieve ( ){
- bs.set();
- bs[0] = bs[1] = 0;
- for ( ll i = 2 ; i<N ; ++i ){
-     if ( bs[i] ) {
-         primes.push_back ( i );
-         for ( ll j = i*i ; j<N ; j+=i ) bs[j] = 0;
-     }
- }
- return;
+/*int prime[100000001];
+void SieveOfEratosthenes(int n)
+{
+
+      for(int i=3; i<=maxx; i+=2){
+          if(prime[i]==0){
+               for(int j=3*i ; j<=maxx; j+=2*i) prime[j]=1;
+              }
+         }
+       cout<<2<<" ";
+      for(int i=3; i<=n; i+=2){
+        if(prime[i]==0)     cout<<i<<" ";
+      }
+
 }
+*/
 
-/*
-bool isPrime(int n) {
-  if(n <= 1)return false;
-  for (int i = 2; i <=sqrt(n); i++) {
-    if (n % i == 0) return false;
-  }
-
-  return true;
-}
-
-ll prime_divisor(ll n) 
-{ 
-    ll cnt = 0; 
-    for (ll i = 1; i <= sqrt(n); i++) { 
-     
-        if (n % i == 0) { 
-           
-            if (n / i == i and isPrime(i)) cnt++;
-               
-            else{
-            	if(isPrime(i))cnt++;
-            	if(isPrime(n/i))cnt++;
-            }
-        } 
-    } 
-    return cnt; 
-}*/ 
 int main(){
 	
-   
-    	   ll n;
-    	   cin>>n;
-    	   sieve();
-    	   if(n>2)cout<<2<<nl;
-    	   else cout<<1<<nl;
-    	   
-    	   for(ll i=2; i<=n+1; i++){
-    	   	
-    	   	if(bs[i])cout<<1<<" ";
-    	   	else cout<<2<<" ";
-    	   }
-       
+	
+	ll t;
+	cin>> t;
+	while(t--){
+		
+		ll a,b;
+		cin>>a>>b;
+        cout<<(a^b)<<nl;
+	
+	}
+	
 	//Allhamdulliah.........❤ 
 	
 }	

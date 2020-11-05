@@ -50,7 +50,7 @@ ____________________________________*/
 #define EPS 1e-9
 #define PI 3.1415926535897932384626433832795
 #define MOD 1000000007
-#define maxx 100001
+
 using namespace std;
  
 ///...Mathematics...///
@@ -76,7 +76,7 @@ bool isprime(int w){if(w == 0) return false;if(w == 1) return false;int sqrtw = 
 #define   IOS   {ios_base::sync_with_stdio(0); cin.tie(0);}
  
 ///.............End Of Template..............////
- ll binarySearch(ll *arr,ll low,ll high,ll key){
+ /* ll binarySearch(ll *arr,ll low,ll high,ll key){
     
      while(low<= high){
          ll mid= (low+high)/2;
@@ -92,24 +92,27 @@ bool isprime(int w){if(w == 0) return false;if(w == 1) return false;int sqrtw = 
      }
      return -1;
 }
-const ll N = 1e5+ 7;
+
+const ll N = 1e8 + 1;
+
 bitset < N+1 > bs;
-vector < ll > primes ;
+vector < ll > prime ;
 void sieve ( ){
  bs.set();
  bs[0] = bs[1] = 0;
  for ( ll i = 2 ; i<N ; ++i ){
      if ( bs[i] ) {
-         primes.push_back ( i );
+         prime.push_back ( i );
          for ( ll j = i*i ; j<N ; j+=i ) bs[j] = 0;
      }
  }
  return;
 }
 
-/*
+
+
 bool isPrime(int n) {
-  if(n <= 1)return false;
+  if(n<=1)return false;
   for (int i = 2; i <=sqrt(n); i++) {
     if (n % i == 0) return false;
   }
@@ -135,20 +138,58 @@ ll prime_divisor(ll n)
     return cnt; 
 }*/ 
 int main(){
-	
-   
-    	   ll n;
-    	   cin>>n;
-    	   sieve();
-    	   if(n>2)cout<<2<<nl;
-    	   else cout<<1<<nl;
-    	   
-    	   for(ll i=2; i<=n+1; i++){
-    	   	
-    	   	if(bs[i])cout<<1<<" ";
-    	   	else cout<<2<<" ";
-    	   }
-       
+	IOS
+   ll t;
+   cin>>t;
+    vector<pair<ll,ll>>vx;
+    vx.pb( make_pair(1,1) );
+    vx.pb( make_pair(11,3) );
+    vx.pb( make_pair(111,6) );
+    vx.pb( make_pair(1111,10) );
+    vx.pb( make_pair(2,11) );
+    vx.pb( make_pair(22,13) );
+    vx.pb( make_pair(222,16) );
+    vx.pb( make_pair(2222,20) );
+    vx.pb( make_pair(3,21) );
+    vx.pb( make_pair(33,23) );
+    vx.pb( make_pair(333,26) );
+    vx.pb( make_pair(3333,30) );
+    vx.pb( make_pair(4,31) );
+    vx.pb( make_pair(44,33) );
+    vx.pb( make_pair(444,36) );
+    vx.pb( make_pair(4444,40) );
+    vx.pb( make_pair(5,41) );
+    vx.pb( make_pair(55,43) );
+    vx.pb( make_pair(555,46) );
+    vx.pb( make_pair(5555,50) );
+    vx.pb( make_pair(6,51) );
+    vx.pb( make_pair(66,53) );
+    vx.pb( make_pair(666,56) );
+    vx.pb( make_pair(6666,60) );
+    vx.pb( make_pair(7,61) );
+    vx.pb( make_pair(77,63) );
+    vx.pb( make_pair(777,66) );
+    vx.pb( make_pair(7777,70) );
+    vx.pb( make_pair(8,71) );
+    vx.pb( make_pair(88,73) );
+    vx.pb( make_pair(888,76) );
+    vx.pb( make_pair(8888,80) );
+    vx.pb( make_pair(9,81) );
+    vx.pb( make_pair(99,83) );
+    vx.pb( make_pair(999,86) );
+    vx.pb( make_pair(9999,90) );
+   while(t--){
+   ll n;
+   cin>>n;
+  
+    for(ll i=0; i<vx.sz();i++){
+        if(vx[i].first == n)
+            cout << vx[i].second << endl; 
+    }
+    
+   }
+    
+    
 	//Allhamdulliah.........❤ 
 	
 }	

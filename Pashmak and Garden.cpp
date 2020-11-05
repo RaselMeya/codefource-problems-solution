@@ -8,7 +8,6 @@ ____________________________________*/
 #include <cmath>
 #include <set>
 #include<stack>
-
 #include<array>
 #include<string>
 #include <numeric>
@@ -50,7 +49,8 @@ ____________________________________*/
 #define EPS 1e-9
 #define PI 3.1415926535897932384626433832795
 #define MOD 1000000007
-#define maxx 100001
+#define MAX 1000
+ 
 using namespace std;
  
 ///...Mathematics...///
@@ -92,64 +92,48 @@ bool isprime(int w){if(w == 0) return false;if(w == 1) return false;int sqrtw = 
      }
      return -1;
 }
-const ll N = 1e5+ 7;
-bitset < N+1 > bs;
-vector < ll > primes ;
-void sieve ( ){
- bs.set();
- bs[0] = bs[1] = 0;
- for ( ll i = 2 ; i<N ; ++i ){
-     if ( bs[i] ) {
-         primes.push_back ( i );
-         for ( ll j = i*i ; j<N ; j+=i ) bs[j] = 0;
-     }
- }
- return;
+ 
+void solve(){
+	ll x1,x2,y1,y2,x3,y3,x4,y4;
+	cin>>x1>>y1>>x2>>y2;
+	if(x1==x2){
+		x3=x1 + abs(y1-y2);
+		y3=y1;
+		x4=x2+ abs(y1-y2);
+		y4=y2;
+		cout<<x3<<" "<<y3<<" "<<x4<<" "<<y4<<nl;
+		
+	}
+   else	if(y1==y2){
+		
+		x3=x1;
+		y3=y1 - abs(x1-x2);
+		x4=x2;
+		y4=y2-abs(x1-x2);
+		cout<<x3<<" "<<y3<<" "<<x4<<" "<<y4<<nl;
+		
+	}
+ 
+   else	if(abs(x2-x1) == abs(y2-y1)){
+		
+		x3=x1;
+		y3=y2;
+		x4=x2;
+		y4=y1;
+	cout<<x3<<" "<<y3<<" "<<x4<<" "<<y4<<nl;	
+	}
+	else cout<<-1<<nl;
+	
+	
 }
-
-/*
-bool isPrime(int n) {
-  if(n <= 1)return false;
-  for (int i = 2; i <=sqrt(n); i++) {
-    if (n % i == 0) return false;
-  }
-
-  return true;
+int main()
+{  IOS;	
+   ll t;
+   t=1;
+   while(t--){
+ 
+	 solve();
+ 
+	}
+    // Alhamdulillah..
 }
-
-ll prime_divisor(ll n) 
-{ 
-    ll cnt = 0; 
-    for (ll i = 1; i <= sqrt(n); i++) { 
-     
-        if (n % i == 0) { 
-           
-            if (n / i == i and isPrime(i)) cnt++;
-               
-            else{
-            	if(isPrime(i))cnt++;
-            	if(isPrime(n/i))cnt++;
-            }
-        } 
-    } 
-    return cnt; 
-}*/ 
-int main(){
-	
-   
-    	   ll n;
-    	   cin>>n;
-    	   sieve();
-    	   if(n>2)cout<<2<<nl;
-    	   else cout<<1<<nl;
-    	   
-    	   for(ll i=2; i<=n+1; i++){
-    	   	
-    	   	if(bs[i])cout<<1<<" ";
-    	   	else cout<<2<<" ";
-    	   }
-       
-	//Allhamdulliah.........❤ 
-	
-}	
-	
